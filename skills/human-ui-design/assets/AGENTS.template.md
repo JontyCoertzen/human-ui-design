@@ -23,6 +23,7 @@ Do not introduce:
 - Placeholder buzzwords, fake testimonials, invented imagery or unsupported impact statistics.
 - Generated photos of people, the same layout in every section, or every headline in one slogan cadence.
 - Light-grey body text that fails measured contrast on its section's background.
+- Their replacements without a content reason: marquees, bento grids, grain overlays, mono micro-labels, giant outlined words, stickers and sparkles, full-width footer wordmarks, pinned scroll reveals.
 
 Functional data labels, numbered steps, and cards are allowed when the content **genuinely needs** them.
 

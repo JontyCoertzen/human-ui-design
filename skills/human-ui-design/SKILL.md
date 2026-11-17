@@ -48,7 +48,7 @@ Use authentic client photography first. Verify licenses for stock; label generat
 
 Use semantic tokens for type, colour, spacing, imagery, components, and motion. Follow the project's established stack. Prioritise readable copy and meaningful imagery. Use [anti-slop.md](references/anti-slop.md) as a critique lens.
 
-**Do not repeat generic decoration:** tracked-uppercase eyebrows before every heading, arbitrary chapter numbering, micro-labels, stock beige/olive/terracotta, reflexive serif headlines, equal icon-card grids, gradients/blobs, or arrows appended everywhere. These are warnings, not blanket bans: a numbered workflow or small data label is correct when it conveys real meaning.
+**Do not repeat generic decoration:** tracked-uppercase eyebrows before every heading, arbitrary chapter numbering, micro-labels, stock beige/olive/terracotta, reflexive serif headlines, equal icon-card grids, gradients/blobs, or arrows appended everywhere. These are warnings, not blanket bans: a numbered workflow or small data label is correct when it conveys real meaning. Do not swap them for the **second-order tells** in [anti-slop.md](references/anti-slop.md) (marquees, bento grids, grain, mono labels, giant outlined words, stickers and the rest); those need a content reason too.
 
 ### 5. Visually review and iterate
 
