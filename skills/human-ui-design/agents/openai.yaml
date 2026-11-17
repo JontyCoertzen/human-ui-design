@@ -1,0 +1,4 @@
+interface:
+  display_name: "Human UI Design"
+  short_description: "Build distinctive sites without AI design clichés"
+  default_prompt: "Use $human-ui-design to define a distinctive art direction, build the page, and iterate after visual review."
