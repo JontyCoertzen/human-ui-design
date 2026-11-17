@@ -12,9 +12,11 @@
 | Rounded pills for all actions and stats | Shapes replace hierarchy | Reserve shapes for actual affordances and states |
 | Decorative arrow after every CTA | Repetitive noise | Use verbs and clear link/button styling |
 | Reveal animation on everything | Slows reading, distracts | Motion only when it helps orientation or emotion |
-| Perfectly posed charity “beneficiaries” | Weak credibility, risk of misrepresentation | Use genuine documented people or clearly labelled illustrative imagery |
+| Generated photos of people: golden-hour glow, everyone smiling at each other, flawless skin, tidy props, centred posed groups | Read as AI instantly, even when labelled; undermines every true claim beside them | Real photography first; otherwise follow “When there are no real photographs” in [art-direction.md](art-direction.md) |
 | “Empowering communities” abstraction | Could describe any company | Say what the organisation actually does |
-| Identical section padding/widths | Artificial visual rhythm | Vary scale/density to serve the narrative |
+| Every section built the same way (big headline one side, paragraph the other, full-width colour band) | The page becomes one pattern repeated; the story never changes pace | Give each section the layout its content needs; break the pattern at least once with a full-bleed image, a sequence, a quote, or real data |
+| Headlines that are all short slogans ending in a full stop (“Make good last.” “Let's talk.”) | A recognisable AI copy cadence; each line sounds like the last | Mix forms: a plain statement of fact, a question, a name, a number, a line in someone's own words |
+| Small light-grey body text, especially on coloured bands | Fails contrast and reads as decoration, not information | Body text at 16px or more in a dark ink; measure contrast on the actual background |
 
 ## Audit
 
@@ -22,7 +24,9 @@
 - Are motifs repeated because they help comprehension or because they make screenshots look designed?
 - Is the type visually impressive **and** readable?
 - Does every section add a new fact, feeling, proof, or action?
-- Are images meaningful and truthful?
+- Are images meaningful and truthful? Would a stranger guess a photo was generated?
+- Shrink the full-page screenshot to a thumbnail: do the sections look like copies of one another?
+- Read every headline in order as a list: do they share one cadence?
 - Does the palette have a brand rationale?
 - Can users understand and complete the main action?
 - Is mobile deliberately composed?

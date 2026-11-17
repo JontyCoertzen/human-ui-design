@@ -21,6 +21,8 @@ Do not introduce:
 - Oversized editorial serif headlines by default.
 - Repeated three-card grids, gratuitous pill badges, glow/blobs or arrows.
 - Placeholder buzzwords, fake testimonials, invented imagery or unsupported impact statistics.
+- Generated photos of people, the same layout in every section, or every headline in one slogan cadence.
+- Light-grey body text that fails measured contrast on its section's background.
 
 Functional data labels, numbered steps, and cards are allowed when the content **genuinely needs** them.
 
