@@ -14,7 +14,7 @@ Resolve these before declaring completion:
 - An approved existing site drifts without permission.
 - Invented testimonials, impact figures, customer logos, product claims, or fictional people presented as real.
 - Material legal/trust content missing.
-- Generic repeated motifs dominate despite a supposedly distinct brief.
+- Generic repeated motifs dominate despite a supposedly distinct brief, including two or more second-order tells from [anti-slop.md](anti-slop.md) with no content reason.
 
 ## Weighted critique (0–5 each)
 
@@ -31,7 +31,7 @@ Calculate `sum(weight × score / 5)`. Aim for **85/100**, with no dimension belo
 
 ## Actual QA sequence
 
-1. Render running page at 1440, 768 and 390px widths where tooling permits.
+1. Run [check-slop.mjs](../scripts/check-slop.mjs) on the running page. It renders 1440, 768 and 390px, saves screenshots and thumbnails, and measures what can be measured: contrast, overflow, labels, numbering, typefaces, headline cadence, repeated layouts, unused colours and second-order tells. Steps 4–7 below are the judgement it cannot make.
 2. Inspect real screenshots of hero, a transition, conversion area, and footer.
 3. Check image crops, text wraps, content order, CTA visibility and overflow.
 4. Check focus, semantics, alt text, reduced motion, and forms. Measure the contrast of body text in every section.
@@ -42,8 +42,8 @@ Calculate `sum(weight × score / 5)`. Aim for **85/100**, with no dimension belo
 9. For revisions, compare screenshots against approved reference and `DESIGN.md`.
 10. Identify three concrete flaws; fix the highest-impact ones; repeat the visual review after substantive changes.
 
-Use third-party Taste/Playwright checks if available and actually installed. Do not claim they ran when they did not.
+Third-party checks (Taste's scripts and the like) may add to this when they are actually installed. Do not claim any check ran when it did not.
 
 ## Reporting
 
-State: concept, screen sizes checked, interactions tested, three concrete observations, and outstanding limitations. If browser QA was unavailable, state **“Visual review not completed”** and do not provide a made-up numeric score.
+State: concept, screen sizes checked, interactions tested, the checker report verbatim, whether the review was independent, three concrete observations, and outstanding limitations. If browser QA was unavailable, state **“Visual review not completed”** and do not provide a made-up numeric score.

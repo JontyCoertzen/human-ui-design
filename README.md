@@ -8,19 +8,32 @@ The core idea: **strong art direction first, code second, screenshots before sig
 
 This skill captures a reusable design process—not a specific visual identity, website, or palette. Each project needs its own art direction.
 
-## What it enforces
+## What it does
 
-- A real concept based on the brand's purpose, audience, and story.
-- Beautiful, appropriate typography rather than reflexively oversized serif.
-- Colours with a reason; no automatic beige/sage/terracotta or purple gradients.
-- Honest, emotional imagery with explicit provenance.
-- Natural copy, restrained components, distinctive composition.
-- Clear conversion journeys and preserved functionality.
-- A project-level `DESIGN.md` so approved work does not drift.
-- Real rendered desktop/mobile screenshot critique and iteration.
-- An **internal quality rubric**. It does not pretend to be an official Awwwards score or claim Taste scripts ran when they did not.
+- **Finds the brand's own truths first.** The agent reads the existing site, copy and files and lists what it found before asking you anything.
+- **Puts the direction on paper before code.** `DESIGN.md` holds the premise, every colour with where it appears, the layout of every section, and every headline in order. A new brand also gets a rendered brand identity page to approve.
+- **Measures the rendered page.** `scripts/check-slop.mjs` loads the page at 1440, 768 and 390px and reports contrast failures, overflow, tracked uppercase labels, decorative numbering, overused typefaces, slogan headlines, repeated section layouts, unused palette colours, generated-image markers and the second-order tells (marquees, bento grids, grain, stickers, custom cursors and the rest).
+- **Gets an independent review.** A fresh reviewer sees only the screenshots and the review gate, not the builder's reasoning.
+- **Restarts instead of polishing.** One “this looks like AI” from you means new directions, not another pass.
+- **Keeps approved work stable** through `DESIGN.md` and the brand identity page.
+- **Stays honest.** No invented testimonials or figures, and no claiming a check, score or review that did not happen.
 
-The goal is the same level of *design thinking* across projects—not the same visual style.
+## What it does not do
+
+- **It does not tell you what to make.** There are no recommended fonts, palettes, layouts, archetypes or effects, on purpose: a recommended look becomes every site's look. Every choice has to come from the project's own material, so two sites built with it should not resemble each other.
+- **It does not guarantee taste.** The checker catches measurable tells; it cannot tell a good idea from a dull one. The screenshots, the independent review and your eye do that.
+- **It cannot spot every generated image.** It flags images labelled or named as generated; a stranger's eye still has to judge the rest.
+- **It does not replace real photography.** Without the client's own photos the best it can do is choose a direction that does not need them.
+- **It cannot run the checker without Node and Playwright.** When they are missing, it must say so rather than report a pass.
+
+## Running the checker yourself
+
+~~~bash
+npm i -D playwright && npx playwright install chromium
+node ~/.claude/skills/human-ui-design/scripts/check-slop.mjs https://your-site.test --out slop-check
+~~~
+
+Adjust the path to wherever the skill is installed. It exits with 1 when there are hard failures. Tells you use on purpose go in `DESIGN.md` with their reason and are passed as `--allow marquee,bento`.
 
 ## Quick start
 
@@ -241,16 +254,16 @@ Tell me which fits the actual content best and why.
 
 ## Working method
 
-| Phase | Deliverable | Do not proceed if… |
+| Gate | Output | Do not proceed if… |
 | --- | --- | --- |
-| Brief | Visitor goal, real story, assets, constraints | Value proposition is unclear |
-| Art direction | Ownable concept, type/colour/image plan | It could fit any brand |
-| Storyboard | Page narrative and CTA path | Sections repeat the same claim |
-| Build | Coherent tokens, pages, functioning flows | It invents claims or breaks existing UI |
-| Visual QA | Screenshots at 1440/768/390 + critique | Mobile clips, CTA unclear, generic patterns dominate |
-| Approval | Updated DESIGN.md and references | Visual direction is still disputed |
+| 1. Brand truths | Truths found in existing material, with sources | You are about to ask for something the site already says |
+| 2. Direction | `DESIGN.md`: premise, colour placements, section layouts, headlines; brand identity page for a new brand | It could fit any brand, or a colour has no placement |
+| 3. Build | Coherent tokens, pages, working flows | It invents claims or breaks existing UI |
+| 4. Measure | `check-slop.mjs` report | Any hard failure, or a warning with no reason in `DESIGN.md` |
+| 5. Independent review | Three biggest problems from a reviewer who saw only screenshots | They are not fixed |
+| 6. Approval | Updated `DESIGN.md`, approved screenshots | The direction is still disputed |
 
-The skill includes a weighted **internal** review gate (art direction, typography, imagery, copy/conversion, accessibility, responsive craft). It targets 85/100 with no hard failures, but **subjective scoring is not an independent design award or automated certification**. The most important gate is looking at the rendered result and responding to real feedback.
+The review gate also has a weighted **internal** rubric. It is a critique aid, **not an independent design award or certification**.
 
 ## Files
 
@@ -262,6 +275,8 @@ skills/human-ui-design/
     art-direction.md       Concept and storytelling guidance
     anti-slop.md           Design clichés and alternatives
     review-gate.md         Visual QA and internal scoring
+  scripts/
+    check-slop.mjs         Measures the rendered page for tells and hard failures
   assets/
     CREATIVE_BRIEF.template.md
     DESIGN.template.md
@@ -271,7 +286,16 @@ skills/human-ui-design/
 
 ## Relationship to other skills
 
-This skill complements, but does not bundle, [Taste](https://www.tasteskill.dev/), the [/awwwards skill](https://github.com/tponscr-debug/claude-skill-awwwards), and [Anthropic's frontend-design guidance](https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design). Install those separately if you want their own workflows or scripts. This repo is original guidance based on the **design principles and shortcomings** we identified through real project iterations.
+This skill does not bundle [Taste](https://www.tasteskill.dev/), the [/awwwards skill](https://github.com/tponscr-debug/claude-skill-awwwards), or [Anthropic's frontend-design guidance](https://github.com/anthropics/claude-code/tree/main/plugins/frontend-design). Use them for technique if you like, but their presets are anti-references here, and this skill wins where they conflict.
+
+That matters most with `/awwwards`, which itself recommends several of the tells this skill exists to remove:
+
+- small uppercase labels with wide tracking (`SKILL.md`);
+- a “Warm Editorial” archetype of cream, warm grey and terracotta (`references/color-systems.md`);
+- “The Editorial Formula” of a display serif plus a tracked uppercase accent (`references/typography.md`);
+- trending-font lists, bento grids, custom cursors and SplitText kinetic type.
+
+This repo is original guidance based on the shortcomings we found through real project iterations.
 
 ## License
 

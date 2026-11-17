@@ -4,6 +4,14 @@
 >
 > **This document is the visual source of truth.** Once approved, revisions and additional pages should extend it, not reinterpret it.
 
+## Brand truths
+
+Found in the existing material before anything was asked.
+
+| Truth | Where it came from |
+| --- | --- |
+| [origin story, place, ritual, number, phrase] | [page, file or conversation] |
+
 ## The idea
 
 - **What this is:** [one sentence describing the organisation/product]
@@ -11,7 +19,7 @@
 - **Five-second message:** [what visitors must understand]
 - **Primary action:** [one main CTA and destination]
 - **Emotional goal:** [e.g. optimistic, trustworthy, energetic—not merely “premium”]
-- **Creative premise:** [distinctive concept, not a genre label]
+- **Creative premise:** [distinctive concept, not a genre label, resting on one of the brand truths above]
 - **Voice:** [three adjectives and a short example sentence]
 
 ## References and anti-references
@@ -37,13 +45,15 @@
 
 ## Colour
 
-| Token | Hex | Role and rationale |
-| --- | --- | --- |
-| Background | [#...] | [...] |
-| Text | [#...] | [...] |
-| Primary action | [#...] | [...] |
-| Supporting surface | [#...] | [...] |
-| Border / muted | [#...] | [...] |
+| Token | Hex | Role and rationale | Where it appears |
+| --- | --- | --- | --- |
+| Background | [#...] | [...] | [sections, surfaces] |
+| Text | [#...] | [...] | [...] |
+| Primary action | [#...] | [...] | [buttons, selected states] |
+| Supporting surface | [#...] | [...] | [...] |
+| Border / muted | [#...] | [...] | [...] |
+
+Every colour needs at least one placement. A colour with none is not part of the palette: place it or remove it.
 
 Check text/interactive contrast against the actual backgrounds. Never assume a colour is accessible because it looks good in a mockup.
 
@@ -53,6 +63,25 @@ Check text/interactive contrast against the actual backgrounds. Never assume a c
 2. **Narrative:** [which distinct questions each section answers; avoid generic card inventory]
 3. **Conversion:** [placement, steps, forms, trust/eligibility/legal information]
 4. **Footer:** [required useful information]
+
+### Section plan
+
+No more than two sections in a row share a layout, and at least one breaks the dominant pattern.
+
+| # | Section | What it adds | Layout | Headline |
+| --- | --- | --- | --- | --- |
+| 1 | Hero | [...] | [e.g. type left, photo bleeding right] | [...] |
+| 2 | [...] | [...] | [...] | [...] |
+
+Read the headline column top to bottom: it should not be one slogan formula repeated.
+
+### Tells used on purpose
+
+Anything from [anti-slop.md](../references/anti-slop.md) this site uses, with the content reason. The checker's `--allow` keys come from here.
+
+| Tell | Checker key | Content reason |
+| --- | --- | --- |
+| [e.g. ticker] | [marquee] | [shows the real live fixture list] |
 
 ### Spacing and geometry
 
