@@ -14,7 +14,7 @@ Resolve these before declaring completion:
 - An approved existing site drifts without permission.
 - Invented testimonials, impact figures, customer logos, product claims, or fictional people presented as real.
 - Material legal/trust content missing.
-- Generic repeated motifs dominate despite a supposedly distinct brief.
+- Generic repeated motifs dominate despite a supposedly distinct brief, including two or more second-order tells from [anti-slop.md](anti-slop.md) with no content reason.
 
 ## Weighted critique (0–5 each)
 
