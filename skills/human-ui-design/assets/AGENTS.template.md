@@ -32,8 +32,11 @@ Functional data labels, numbered steps, and cards are allowed when the content *
 - Prioritise beautiful typography, honest imagery, natural copy, strong composition and clear actions.
 - Use real, licensed or client-provided media; disclose illustrative images.
 - Preserve working forms, payments, routes, accessibility and legal details.
-- Render at desktop (1440px), tablet (768px) and mobile (390px), or nearest possible.
-- Visually review screenshots and test local UI behavior; iterate after critique.
+- Read the existing site and files for brand truths before asking anything; ask only for what is missing.
+- Fill in `DESIGN.md` (colour placements, section layouts, headlines) before writing components.
+- Run the skill's `scripts/check-slop.mjs` on the running page (1440, 768 and 390px). Hard failures block; warnings need a reason in `DESIGN.md`. Paste the report in the handoff.
+- Have the screenshots reviewed by someone who has not seen the brief or code, or say the review was not independent.
+- If the owner calls it slop, generic or AI-looking, start again with new directions instead of another pass.
 - Do not claim Taste/Awwwards scoring or browser QA unless those tools were actually run.
 - Do not change unrelated design decisions or ship an unapproved rebrand.
 
