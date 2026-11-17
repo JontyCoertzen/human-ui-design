@@ -3,9 +3,12 @@
 // Usage: node check-slop.mjs <url> [--out <dir>] [--widths 1440,768,390] [--allow marquee,bento]
 // --allow names tells whose content reason DESIGN.md records; keys: marquee outlined sticker grain cursor bento
 // glass-nav wordmark labels mono font.
-// Needs Playwright: npm i -D playwright && npx playwright install chromium
+// Needs Playwright: npm i -D playwright && npx playwright install chromium (found from the current directory or this
+// script's). Elsewhere, PLAYWRIGHT_MODULE names the module file and CHROMIUM_PATH the browser to launch.
 import { mkdir, writeFile } from "node:fs/promises"
+import { createRequire } from "node:module"
 import path from "node:path"
+import { pathToFileURL } from "node:url"
 
 const args = process.argv.slice(2)
 const url = args.find((a) => !a.startsWith("--"))
@@ -21,11 +24,29 @@ const out = flag("out", "slop-check")
 const widths = flag("widths", "1440,768,390").split(",").map(Number)
 const allowed = flag("allow", "").split(",").filter(Boolean)
 
-let chromium
-try {
-	;({ chromium } = await import("playwright"))
-} catch {
-	console.error("Playwright is not installed here: npm i -D playwright && npx playwright install chromium")
+// Node resolves a bare import from this script's folder, so the project's own node_modules is tried explicitly.
+async function loadChromium() {
+	const fromProject = createRequire(path.join(process.cwd(), "noop.js"))
+	const candidates = [process.env.PLAYWRIGHT_MODULE]
+	for (const name of ["playwright", "playwright-core"]) {
+		try {
+			candidates.push(fromProject.resolve(name))
+		} catch {}
+		candidates.push(name)
+	}
+	for (const candidate of candidates.filter(Boolean)) {
+		const specifier = path.isAbsolute(candidate) ? pathToFileURL(candidate).href : candidate
+		try {
+			const mod = await import(specifier)
+			return mod.chromium ?? mod.default?.chromium
+		} catch {}
+	}
+	return null
+}
+
+const chromium = await loadChromium()
+if (!chromium) {
+	console.error("Playwright is not installed here: npm i -D playwright && npx playwright install chromium, or set PLAYWRIGHT_MODULE")
 	process.exit(2)
 }
 
@@ -299,7 +320,7 @@ async function open(browser, width, scale) {
 	return page
 }
 
-const browser = await chromium.launch()
+const browser = await chromium.launch({ executablePath: process.env.CHROMIUM_PATH || undefined })
 const results = {}
 try {
 	await mkdir(out, { recursive: true })
