@@ -8,7 +8,9 @@ Resolve these before declaring completion:
 
 - Visitor cannot identify purpose and primary action quickly.
 - Primary navigation, payment, enquiry, booking, form, or other required flow is broken.
-- Clipped headings, horizontal overflow, unreadable contrast, unusable touch targets, or keyboard traps.
+- Clipped headings, horizontal overflow, unusable touch targets, or keyboard traps.
+- Text contrast below WCAG AA, measured on the real background: 4.5:1 for body text, 3:1 for large text and controls. Check every coloured section, not only the main background.
+- Generated photos of people in the hero or presented as proof.
 - An approved existing site drifts without permission.
 - Invented testimonials, impact figures, customer logos, product claims, or fictional people presented as real.
 - Material legal/trust content missing.
@@ -32,10 +34,13 @@ Calculate `sum(weight × score / 5)`. Aim for **85/100**, with no dimension belo
 1. Render running page at 1440, 768 and 390px widths where tooling permits.
 2. Inspect real screenshots of hero, a transition, conversion area, and footer.
 3. Check image crops, text wraps, content order, CTA visibility and overflow.
-4. Check focus, semantics, alt text, reduced motion, and forms.
-5. Test local interactions without submitting real payments or messages.
-6. For revisions, compare screenshots against approved reference and `DESIGN.md`.
-7. Identify three concrete flaws; fix the highest-impact ones; repeat the visual review after substantive changes.
+4. Check focus, semantics, alt text, reduced motion, and forms. Measure the contrast of body text in every section.
+5. Look at the full-page screenshot as a small thumbnail. If the sections read as copies of one layout, rework at least one before polishing anything else.
+6. List every headline in page order and read them aloud. Rewrite any run that shares one cadence.
+7. Ask of each photo: would a stranger guess it was generated? If yes, replace it or follow the no-photography fallback in [art-direction.md](art-direction.md).
+8. Test local interactions without submitting real payments or messages.
+9. For revisions, compare screenshots against approved reference and `DESIGN.md`.
+10. Identify three concrete flaws; fix the highest-impact ones; repeat the visual review after substantive changes.
 
 Use third-party Taste/Playwright checks if available and actually installed. Do not claim they ran when they did not.
 

@@ -40,9 +40,9 @@ For open briefs, show two or three **genuinely different** directions when a use
 
 ### 3. Storyboard the page
 
-Write a progression, not an inventory of cards. Lead with a proposition the visitor understands without a slogan decoder. Each section must add new substance. Give the primary CTA a clear path. Preserve necessary legal, donation, privacy, eligibility, and accessibility content even when copy is minimal.
+Write a progression, not an inventory of cards. Lead with a proposition the visitor understands without a slogan decoder. Each section must add new substance and gets the layout its content needs; name that layout in the storyboard so a repeated pattern is visible before it is built. Write the headlines as a set, not as one slogan formula. Give the primary CTA a clear path. Preserve necessary legal, donation, privacy, eligibility, and accessibility content even when copy is minimal.
 
-Use authentic client photography first. Verify licenses for stock; label generated or illustrative scenes and never portray them as documentary evidence.
+Use authentic client photography first. Verify licenses for stock; label generated or illustrative scenes and never portray them as documentary evidence. Generated photos of people give a page away even when labelled; without real photos, follow the fallback order in [art-direction.md](references/art-direction.md).
 
 ### 4. Implement a coherent system
 
