@@ -1,6 +1,6 @@
 ---
 name: human-ui-design
-description: Design, build, audit, and revise distinctive websites and frontend interfaces without generic AI-generated design patterns. Use for new landing pages, marketing sites, product UI, charity sites, visual redesigns, art direction, typography and palette decisions, expanding an approved site, and anti-slop UI audits. Preserve each project's approved DESIGN.md and visual identity during revisions; invent a new direction for new brands.
+description: Design, build, audit, and revise distinctive websites, frontend interfaces, logos, and brand identities without generic AI-generated patterns. Use for landing pages, marketing sites, product UI, charities, visual redesigns, art direction, typography and palette decisions, logo research, symbol/wordmark design, monograms, logo sketch exploration, brand marks for merchandise, expanding an approved site, and anti-slop UI audits. Preserve each project's approved DESIGN.md and identity during revisions; invent a new direction for new brands.
 ---
 
 # Human UI Design
@@ -29,13 +29,16 @@ Use those skills for technique (how to build a scroll animation, how to set trac
 - **New brand/site:** Create art direction from the audience, purpose, brand assets, tone, content, and imagery. Read [art-direction.md](references/art-direction.md).
 - **Approved existing site:** Read its `DESIGN.md`, `AGENTS.md` / `CLAUDE.md`, existing code, and approved screenshots first. Treat these as constraints unless the user explicitly requests a rebrand.
 - **Rejected design/redesign:** Treat criticism as a concept-level constraint. See the restart rule below.
-- **Audit only:** Identify evidence-backed issues without mutating files unless asked to implement. Run the checker (gate 4) and the independent review (gate 5).
+- **Audit only:** Identify evidence-backed issues without mutating files unless asked to implement. For website audits, run the checker (gate 4) and independent review (gate 5).
+- **Logo/brand identity:** Read [logo-design.md](references/logo-design.md) **in full**, and start from [LOGO_BRIEF.template.md](assets/LOGO_BRIEF.template.md). Research the actual brand, produce numbered monochrome thumbnails, mix swappable components, shortlist, refine vector paths and proof the required printing/merch uses. Do **not** apply web-page layout, Playwright or conversion gates to standalone logo sketches.
 
 Never invent brand assets, beneficiaries, testimonials, impact metrics, partnerships, or legal claims.
 
-## Gates
+## Website and interface gates
 
-Each gate produces something you can show. Do not start the next gate until the current one's output exists.
+These gates apply to websites and interfaces. For a **standalone logo**, follow the separate sequence in [logo-design.md](references/logo-design.md) instead. For a full identity with a website, run the relevant process for each medium; visual approval of an icon is not a substitute for page testing, and vice versa.
+
+Each website gate produces something you can show. Do not start the next gate until the current one's output exists.
 
 ### 1. Brand truths, from what already exists
 
@@ -99,7 +102,9 @@ Polishing a wrong concept wastes rounds; the user should never have to ask twice
 
 ## Handoff
 
-Report:
+**Logo handoff:** Report the research basis, sketch count and immutable IDs, component explorations, selected/rejected families with reasons, monochrome and real-size proof results, whether the artwork is a real editable vector, what was vendor-tested versus only simulated, and remaining clearance or production limitations. Do not call an AI-rendered raster preview print-ready artwork. Record the approved design for future consistency.
+
+**Website/interface handoff:** Report:
 
 - the premise and the brand truth it rests on;
 - what changed;
@@ -113,6 +118,8 @@ Do not self-award an Awwwards or Taste rating.
 ## Resources
 
 - [Art direction](references/art-direction.md): concept discovery, copy, imagery, and references.
+- [Logo design](references/logo-design.md): brand research, divergent sketching, component matrices, critique, reduction, and production proofs.
+- [Logo brief](assets/LOGO_BRIEF.template.md): a reusable record of meaning, references, sketch IDs, production needs and approvals.
 - [Anti-slop audit](references/anti-slop.md): first- and second-order AI patterns.
 - [Review gate](references/review-gate.md): rubric, hard failures, actual visual QA.
 - [check-slop.mjs](scripts/check-slop.mjs): the measurements behind gate 4.

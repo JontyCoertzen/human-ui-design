@@ -1,4 +1,4 @@
 interface:
   display_name: "Human UI Design"
-  short_description: "Build distinctive sites without AI design clichés"
-  default_prompt: "Use $human-ui-design to define a distinctive art direction, build the page, and iterate after visual review."
+  short_description: "Design distinctive websites and original logos"
+  default_prompt: "Use $human-ui-design to create a distinctive site or develop an original logo through research, numbered sketches, vector refinement and real-world proofs."

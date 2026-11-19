@@ -1,15 +1,17 @@
 # Human UI Design
 
-**A reusable design skill for building websites that look considered, specific, and human—not like generic AI templates.**
+**A reusable design skill for websites and logos that feel considered, specific, and human—not like generic AI templates or recycled stock marks.**
 
-Use it for landing pages, product sites, charities, portals, redesigns, and new pages in an existing design system. It is designed for **Claude Code, Codex, and other agents that support the open Agent Skills format**.
+Use it for landing pages, product sites, charities, portals, redesigns, new pages in an existing design system, and **original logo or brand-mark development**. It is designed for **Claude Code, Codex, and other agents that support the open Agent Skills format**.
 
-The core idea: **strong art direction first, code second, screenshots before sign-off.**
+The core idea for sites: **strong art direction first, code second, screenshots before sign-off.** For logos: **research, many sketches, component exploration, reduction, then real-world proof.**
 
 This skill captures a reusable design process—not a specific visual identity, website, or palette. Each project needs its own art direction.
 
 ## What it does
 
+- **Explores original logos as a design process.** Research the identity, draw many numbered black-and-white thumbnails, try swappable silhouette/negative-space/relationship components, critique, shortlist and refine before choosing a mark.
+- **Designs for real production.** Test at actual physical sizes and in one colour; make editable vector paths and verify the specific printer/embroiderer requirements rather than treating image generation as final artwork.
 - **Finds the brand's own truths first.** The agent reads the existing site, copy and files and lists what it found before asking you anything.
 - **Puts the direction on paper before code.** `DESIGN.md` holds the premise, every colour with where it appears, the layout of every section, and every headline in order. A new brand also gets a rendered brand identity page to approve.
 - **Measures the rendered page.** `scripts/check-slop.mjs` loads the page at 1440, 768 and 390px and reports contrast failures, overflow, tracked uppercase labels, decorative numbering, overused typefaces, slogan headlines, repeated section layouts, unused palette colours, generated-image markers and the second-order tells (marquees, bento grids, grain, stickers, custom cursors and the rest).
@@ -250,7 +252,71 @@ palette, image treatment and page composition.
 Tell me which fits the actual content best and why.
 ~~~
 
+### I. Research and explore a brand-new logo
+
+~~~text
+Use $human-ui-design in LOGO mode. Read references/logo-design.md.
+
+Brand: [name]
+What we do: [plain-language description]
+Audience: [who sees it]
+Brand feeling: [three adjectives]
+Old sketches / existing brand materials: [links, or none]
+Main uses: [website, avatar, shirts, caps, signage, print]
+Colour/ink constraint: [one colour, two colours, approved palette]
+
+Research our identity and adjacent logos first; identify common clichés
+and specific opportunities. Preserve the meaning of an old sketch,
+not unnecessary literal details. Then generate 30–50 numbered QUICK
+monochrome logo thumbnails across at least four genuinely different
+creative territories. Show contact sheets. No polished mockups or
+colour until we have chosen ideas worth refining. Don't stop at one logo.
+State what is verified and what is an untested concept.
+~~~
+
+### J. Mix parts from the sketch sheets
+
+~~~text
+Use $human-ui-design in LOGO mode.
+
+I like the base silhouette of [S07], negative space of [S18],
+and balance of [S29]. Build a component library:
+- 4–6 distinct base silhouettes.
+- 3–5 inner shapes or relationship treatments.
+- A numbered matrix such as A1–E4, so I can select parts by ID.
+- Another independent sketch sheet that challenges the matrix formula.
+
+Use black on white, no gradients. Test recognizability, accidental
+secondary readings, distinctiveness and one-colour production. Do not
+silently substitute a completely different concept or force a generic
+symbol onto the brand.
+~~~
+
+### K. Refine and proof a shortlisted logo for print
+
+~~~text
+Use $human-ui-design in LOGO mode. The approved directions are [IDs].
+Refine approximately five genuinely distinct sketches into three
+considered candidates, showing what was simplified and why.
+
+Test at actual sizes for [merch/print/avatar/signage]. Show black,
+white/reversed and approved two-colour versions. Check fragile gaps,
+strokes, readability and the specific production vendor's constraints.
+Create true editable SVG/vector paths and symbol-only, horizontal and
+stacked lockups only AFTER I select the winning mark.
+
+Provide a proof sheet and usage rules, and disclose anything not
+physically printed, stitched, cleared or verified. Do not modify our
+website unless I separately ask you to.
+~~~
+
 ---
+
+## Logo design method
+
+For logo projects, the skill uses a **separate route** from the six website gates. A working [logo brief](skills/human-ui-design/assets/LOGO_BRIEF.template.md) captures meaning, target audiences, inherited sketches, applications and vendor constraints. The detailed [logo-design reference](skills/human-ui-design/references/logo-design.md) guides research → 24–50+ numbered sketches → component matrices → roughly five shortlists → three developed candidates → true vector refinement → one-colour and real-size production proof.
+
+The page checker is for websites. It does **not** validate logo originality, SVG print quality, embroidery limits or trademark clearance. Photo-realistic mockups and image-generated logos are exploration tools, not finished vector artwork.
 
 ## Working method
 
@@ -273,12 +339,14 @@ skills/human-ui-design/
   agents/openai.yaml       ChatGPT/Codex skill metadata
   references/
     art-direction.md       Concept and storytelling guidance
+    logo-design.md         Logo research, 24–50+ sketches, component matrices and production proofs
     anti-slop.md           Design clichés and alternatives
     review-gate.md         Visual QA and internal scoring
   scripts/
     check-slop.mjs         Measures the rendered page for tells and hard failures
   assets/
     CREATIVE_BRIEF.template.md
+    LOGO_BRIEF.template.md
     DESIGN.template.md
     AGENTS.template.md
     CLAUDE.template.md
